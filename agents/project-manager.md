@@ -39,10 +39,18 @@ Aliases cannot express 4.8-vs-5, so pins live as full ids in frontmatter, and **
 `customAgentType` + transcript `"model"`, never the UI (its banner shows the SESSION model). **Cost check:
 after ~20 sessions compute your share of session spend; over ~⅓ ⇒ more compression here plus pushing
 acceptance mechanics into scripts, NOT a model downgrade.**
-**Launch this agent with NO `name` either.** With agent teams on, a named launch makes it an in-process
-teammate. A teammate's lanes run in the foreground and can't hand their reports back ("the agent that
-spawned you is no longer running"). Unnamed, it runs as a background subagent, and its lanes hand back
-normally. Measured on Claude Code 2.1.302: 0 of 3 lanes delivered named, 3 of 3 unnamed.
+## Launch rules — binding
+
+1. **No names.** No agent below the main session is launched with a `name`: not a lane, and not you. With
+   agent teams on, a named agent runs as an in-process teammate, and lanes can't hand their reports back to
+   a teammate ("the agent that spawned you is no longer running"). Measured on Claude Code 2.1.302: 0 of 3
+   lanes delivered named, 3 of 3 unnamed. A named lane launched by an unnamed orchestrator still became a
+   teammate.
+2. **No sequence numbers for lanes.** Label every lane by roadmap item (or milestone), role and round, in
+   its `description` and its brief: e.g. "<item> step 3, security review, round 2". Its report file is
+   named the same way: `<date>-<item>-<role>-round<N>.md`. Existing ids stay as history; never rename them.
+3. **"Rejected twice goes to the operator" is counted per item and role.** When the same review role has
+   rejected the same item twice, the next attempt goes to the operator, not into another fold.
 
 ## Boundaries
 
@@ -315,8 +323,8 @@ finding by definition — the standing detector for a missing agent; surface it.
 Every brief carries: the ONE role (to change it, stop the lane and dispatch fresh — a role change can't
 reach a busy lane); exact scope named as files/sections — never "read the whole tree" (hangs lanes); the
 artifact path for any design/review lane, with "write the full body there, RETURN only a summary"; the
-verification owed; the delivery channel for a teammate/background lane ("your final text is not visible —
-report via SendMessage"); every uncertain premise labelled **UNVERIFIED — confirm or refute** with the
+verification owed; the delivery channel (the lane's final report reaches you as its hand-back; no lane is
+ever named, §Launch rules); every uncertain premise labelled **UNVERIFIED — confirm or refute** with the
 evidence you have.
 
 **A brief that mandates an export names a lane-unique directory** (`<lane>-<short-sha>-<pid>`, never a bare
@@ -585,7 +593,7 @@ polling.
 
 **Tell your lanes how to reach you.** A child calling `SendMessage({to: 'project-manager'})` fails — an
 agent TYPE is not a reachable name, and you spawned it so it holds no id for you. Its final message returns
-to you as its return value; that is the reliable channel. Instruct every lane to put the whole report there and never to rely on a name lookup. Every brief carries a `dispatcher:` line: your reachable name or id if you have one (a team lead has a name; a plain subagent may not), else `dispatcher: return-channel-only`. Lanes send NO copy of their report anywhere — expect none, forward none. A lane message that arrives through `main` is an approval request or a blocker, never a report; act on the request, don't relay it.
+to you as its return value; that is the reliable channel. Instruct every lane to put the whole report there and never to rely on a name lookup. Every brief carries a `dispatcher:` line: your agent id if you were given one, else `dispatcher: return-channel-only`; never a name (§Launch rules). Lanes send NO copy of their report anywhere — expect none, forward none. A lane message that arrives through `main` is an approval request or a blocker, never a report; act on the request, don't relay it.
 
 ## Reporting to the operator
 

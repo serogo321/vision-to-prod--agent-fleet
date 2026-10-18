@@ -32,7 +32,7 @@ Install the **vision-to-prod--agent-fleet** subagents from https://github.com/se
    - any agent whose `model:` line names a model my account cannot use. Tell me to change that line to a model I
      have. Each agent pins its model and effort in its frontmatter; dispatch it WITHOUT an inline `model` parameter,
      because an inline model overrides the pin;
-   - that `project-manager` must be launched WITHOUT a `name`. With agent teams on, a named launch makes it a
-     teammate, and its lanes can't hand their reports back to it;
+   - that every agent must be launched WITHOUT a `name`. With agent teams on, a named launch makes it a
+     teammate, and lanes can't hand their reports back to a teammate;
    - the optional tools and skills the README lists as "if available". Note which of them I seem to have.
 7. **Delete the temporary clone.**

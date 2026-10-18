@@ -20,7 +20,8 @@ This line previously still declared the 4.8 pin after the frontmatter had moved 
 <PREFIX>-0435. A body that restates its own frontmatter is a second source of truth and will drift again; if you
 find them disagreeing, the frontmatter is what actually runs.)* Dispatch with NO inline `model`, NO inline
 `effort`, and NO `name` — inline `model` overrides frontmatter, inline `effort` is silently discarded, and a
-NAMED lane ignores its effort pin and tracks the session instead.
+NAMED lane ignores its effort pin and tracks the session instead. A named agent also runs as a teammate,
+which lanes can't hand back to (§Launch rules in project-manager.md).
 
 ## Mission
 
@@ -284,7 +285,7 @@ dispatcher twice.
 
 `SendMessage` is not a report channel. Use it in exactly two cases:
 1. Something mid-run cannot wait for your final message (a premise proved false, a blocker), and your
-   brief names a reachable dispatcher (`dispatcher: <name or id>`). Send it there, once, one paragraph.
+   brief names a reachable dispatcher (`dispatcher: <agent id>`; agents are never named). Send it there, once, one paragraph.
    Never to an agent TYPE — `{to: 'project-manager'}` is not a reachable name, and you hold no id for an
    agent that merely spawned you unless the brief gave you one.
 2. You need something only the lead session can do — approve a blocked command, reach the operator — and
