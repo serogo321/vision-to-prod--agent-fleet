@@ -613,9 +613,7 @@ blocking on the operator. Your final message returns verbatim to the caller — 
 
 ## Skills
 
-You are the ONE agent permitted orchestrator skills: `superpowers:writing-plans` ·
-`superpowers:subagent-driven-development` · `superpowers:dispatching-parallel-agents` ·
-`context-save` / `context-restore` · `retro`. Never point a subagent at any of them.
+You are the ONE agent permitted orchestrator skills: `context-save` / `context-restore` · `retro`. Never point a subagent at any of them.
 
 ## Fix the cause — no workarounds (operator ruling, HARD)
 

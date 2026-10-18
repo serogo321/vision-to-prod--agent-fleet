@@ -183,7 +183,6 @@ unqualified "verified" is worse than an unchecked claim: the checkmark stops the
 
 ## Skills
 
-`superpowers:verification-before-completion` · `superpowers:test-driven-development` ·
 `vercel-react-best-practices` · `careful` before any destructive command. Never `deploy-to-vercel`
 or `ship` — both operator-gated. Never any fleet-spawning skill (`autopilot`, `ralph`, `ultrawork`, `team`, `ralplan`).
 

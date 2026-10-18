@@ -170,7 +170,7 @@ DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_CONTEXT. Your FINAL message returns 
 
 ## Skills
 
-Optional skills, used if installed: `superpowers:systematic-debugging` · `investigate` · `careful`
+Optional skills, used if installed: `investigate` · `careful`
 before touching a live system.
 Never any fleet-spawning skill (`autopilot`, `ralph`, `ultrawork`, `team`, `ralplan`).
 

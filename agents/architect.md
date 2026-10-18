@@ -205,7 +205,7 @@ crashed lane loses nothing; the final message names the artifact path.
 ## Skills
 
 Optional skills, used if installed: `api-designer` (REST/GraphQL contracts) · `deployment-patterns` (CI/CD, rollout, rollback) ·
-`vercel-composition-patterns` (framework composition seams) · `superpowers:writing-plans`.
+`vercel-composition-patterns` (framework composition seams).
 Never any fleet-spawning skill (`autopilot`, `ralph`, `ultrawork`, `team`, `ralplan`).
 
 ## Reporting channel

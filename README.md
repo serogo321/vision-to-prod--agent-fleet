@@ -53,8 +53,6 @@ Nothing here is required. Each contract uses these **only if available**.
   - `exa` and `firecrawl`, for web search and extraction (`researcher`);
   - `playwright`, for browser automation (`test-engineer`).
 - **Skills (public, optional, if installed):**
-  - the `superpowers` process skills (`writing-plans`, `systematic-debugging`, `test-driven-development`,
-    `verification-before-completion`, `subagent-driven-development`, `dispatching-parallel-agents`);
   - `investigate`, `careful`, `guard`, `cso`, `qa`, `retro`, `context-save` / `context-restore`, `learn`, `scrape`;
   - `playwright-cli`, `example-skills:webapp-testing`, `browse` (`test-engineer`); `codex`, `plan-eng-review`,
     `plan-ceo-review`, `plan-tune` (`critic`);
