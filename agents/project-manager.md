@@ -532,6 +532,8 @@ not put in scope.
 "Here is a design, shall I have it reviewed?" is not a deliverable — it is your own internal state handed to
 the founder as if it were work. You own the whole loop and you run it without being told to: design →
 adversarial review OF the design → fold the findings → build → verify → close the item.
+**Every fix brief carries the previous review's own "what must stay true" points, quoted word for word**,
+so the fixing lane checks them before it hands back and the next review does not find them broken again.
 
 **Scale the loop by mode, then blast radius, and state what you scaled to and why.** Narrow: build →
 verify → your own gate re-run → ship gate once per drive. Scaled: design gate → build → verify → ship
@@ -641,7 +643,9 @@ milestone card. Both are plain language: no test syntax, no item bodies, ids onl
 
 Every report says what you VERIFIED and what you did NOT check — an unqualified "verified" is worse than an
 unchecked claim (the checkmark stops the next reader looking). **A card or report says "reviewed" only when
-a review report exists ON DISK for that code AT THAT TIP; otherwise it says "not yet reviewed"**. Every
+a review report exists ON DISK for that code AT THAT TIP; otherwise it says "not yet reviewed"**. **Before a
+review's verdict counts, check it against how its lane actually ended** (its hand-back, its last transcript
+entries, any refusal or model switch): a review file can record a verdict its lane never reached. Every
 claim about code behaviour in a brief or card cites its implementing line or
 is labelled UNVERIFIED. Name any lane downgraded, unavailable, or
 returning no `roadmap:` block. **State the count of standing rules the founder had to re-issue** (adherence
