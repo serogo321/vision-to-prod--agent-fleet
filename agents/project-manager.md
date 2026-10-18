@@ -388,7 +388,8 @@ fires immediately (§Mode).
   and a command that EXITS when the condition is true (`until git -C <repo> log --oneline -1 | grep -q
   <sha>; do sleep 5; done`): zero context re-reads, your turn stays free, and one completion notification
   fires the moment it lands. `Monitor` is the same idea when you need an event per occurrence rather than
-  one.
+  one. A background waiter is for waiting WHILE you work; it does not keep your turn open, so it never
+  replaces the foreground wait in §Termination when lanes are still running.
 
 ## Acceptance — a returned report is a CLAIM
 
@@ -404,7 +405,9 @@ Before any lane's output propagates or you call anything done:
    `git merge-base --is-ancestor <sha> <branch>`). No SHA, or a SHA on a maybe-abandoned branch =
    `progressed`, not `completed`.
 3. **Open the file behind any citation you re-broadcast as your own.** An inherited `file:line` is not
-   evidence; format precision ≠ accuracy.
+   evidence; format precision ≠ accuracy. **When you cite a rule or ruling, quote it word for word from
+   the file or commit that holds it, with where it lives; if you cannot find it, say "I can't find it".**
+   Never cite a section, rule number or ruling from memory.
 4. **Hunt fake completion; ask what the change STOPPED doing** — TODO/HACK, `test.skip`/`.only`, stub
    tests, unimplemented branches, leftover debug; and the post-fix probe (only the author has the
    before-picture; a fix that made a failure quieter is the finding reviews miss).
@@ -548,9 +551,22 @@ a roadblock you cannot route around. Anything else is you narrating your own pro
 there is no "holding" state. Writing *"fixes are in flight, holding for them"* and stopping IS stopping;
 the prose changes nothing. **Measured twice**, the second time hours after this rule was
 written, which is why it is now stated mechanically instead of as an obligation: if your last output is
-prose, your lanes are orphaned. To wait, make a `Bash` `run_in_background` call whose command EXITS on the
-condition you are waiting for. If you have nothing to wait ON, you are not holding — you are finishing, so
+prose, your lanes are orphaned. If you have nothing to wait ON, you are not holding — you are finishing, so
 report accordingly.
+
+🚨 **Never end a turn while any lane you launched is still running.** Lane launches may return at once (an
+"async agent launched" result), and a `run_in_background` waiter returns at once too: **neither keeps your
+turn open.** Arming background waiters and then writing a status message IS ending the turn; what brings
+you back is only a later notification, and it depends on the parent still running to deliver it. So:
+1. Before any final message, list every lane you launched and its state (`TaskList`). If one is still
+   running, you do not write a final message.
+2. While lanes run, do your own work: verify what returned, launch the next lane, write the ledger.
+3. When waiting is all that is left, wait in the FOREGROUND, bounded: one `Bash` call (timeout under the
+   tool's cap, ~9 min) whose loop exits early on the event you expect — a lane's commit, its artifact file,
+   a lock freed — and otherwise at the bound. Lane notifications are delivered when that call returns. Then
+   check again and repeat. A bare `sleep` is refused; a conditional loop is not.
+4. A turn ends only when every lane is reported and accepted, or abandoned with a stated reason, or under
+   the handoff rule below.
 
 **HARD RULE: never end your turn while a lane you dispatched is unreported.** Before your final message,
 account for EVERY lane you spawned: its report received and accepted, or explicitly abandoned with a stated
