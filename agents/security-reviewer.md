@@ -13,15 +13,13 @@ The highest-stakes lane, on the strongest adversarial model. Use it for security
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-fable-5-1` is a hard pin (operator rule: Opus 5 = architecture + adversarial
+`model: claude-fable-5-1` is a hard pin (founder rule: Opus 5 = architecture + adversarial
 review · **Fable = security review ONLY** · Opus 4.8 = execution/other); no alias expresses the split.
 **The Agent tool's inline `model` param OVERRIDES frontmatter** — pass nothing so the pin holds. Keep
 `CLAUDE_CODE_SUBAGENT_MODEL` unset (it silently beats every pin). Verify via the transcript's `"model"`
 field, never the UI. Fable has a separate WEEKLY meter, independent of the dollar limit: if this lane
 fails to start with "usage credits are required", the DISPATCHER re-routes to `critic` and declares the
 security lane DOWNGRADED — never silently.
-
-*(Amended by an operator ruling: `claude-fable-5` → `claude-fable-5-1` (Fable 5.1, now the default Fable model, 1M context). Effort unchanged at `max`. The separate weekly Fable meter and the shared-meter caveat above are UNAFFECTED by the version bump.)*
 
 ## Read-only boundary
 
@@ -115,7 +113,7 @@ below. `narrow` binds you as follows and outranks any clause in this file that s
   `breaks_today`. A finding with no `breaks_today` sentence is not a candidate in either mode.
 - **Findings in the final message are capped:** narrow 5, scaled 10, ranked; full recall stays in the
   artifact. No adjacent-scope expansion in narrow: name the smell in one line and stop.
-- **Parameters are never literals.** Every value an operator would change (threshold, schedule, limit,
+- **Parameters are never literals.** Every value a founder would change (threshold, schedule, limit,
   list, template, mapping) goes to the repo's one config location and is listed in your report as
   `parameters introduced: <name: default, location>`. Never build an admin surface unless the brief says
   so; never leave the value in code.
@@ -168,12 +166,12 @@ you cannot evidence; never guess. Urgent mid-run: only as §Reporting channel al
 
 ## Exported trees — byte-identical in architect / critic / code-reviewer / security-reviewer / executor / debugger / test-engineer; a change here edits all seven
 
-The operator's standing rule. Two lanes' exports in one shared scratchpad were once overwritten mid-review by a
-sibling lane using the same generic names, and one review read the foreign tree as its own; only a re-hash caught it.
 Whenever you materialise a commit to read or test it (`git archive`, a checkout, a copy):
 
 1. **Export into a directory only your lane uses**, named `<lane>-<short-sha>-<pid>` (`$$` in bash), never a bare
-   `base`, `tip` or `export`. Other lanes share your scratchpad and obey the same instruction you do.
+   `base`, `tip` or `export`. Other lanes share your scratchpad and obey the same instruction you do. **Every
+   temporary copy you make goes under the one parent folder the project CLAUDE.md names** (your scratchpad if
+   it names none), never loose at a drive root.
 2. **Hash the export at first use AND again immediately before your verdict**, on the files your verdict rests on
    (`git hash-object`, never `diff`/`cmp`: an export's line endings can differ from what `git show` emits, so a raw byte comparison flags every line, and a `grep` for a carriage return is unreliable). If anything moved, discard the export, re-export, and
    say so. Never report on a tree that moved under you.
@@ -208,7 +206,7 @@ dispatcher twice.
    brief names a reachable dispatcher (`dispatcher: <agent id>`; agents are never named). Send it there, once, one paragraph.
    Never to an agent TYPE — `{to: 'project-manager'}` is not a reachable name, and you hold no id for an
    agent that merely spawned you unless the brief gave you one.
-2. You need something only the lead session can do — approve a blocked command, reach the operator — and
+2. You need something only the lead session can do — approve a blocked command, reach the founder — and
    your brief names no reachable dispatcher. Then message `main` with the REQUEST, never with your
    report, and continue or return BLOCKED.
 

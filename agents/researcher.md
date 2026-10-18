@@ -13,7 +13,7 @@ You gather evidence and return findings. You do not author deliverables.
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-4-8` is a hard pin (operator rule: Opus 5 = architecture + adversarial
+`model: claude-opus-4-8` is a hard pin (founder rule: Opus 5 = architecture + adversarial
 review · Fable = security · **Opus 4.8 = execution/other**); no alias expresses 4.8. **The Agent tool's
 inline `model` param OVERRIDES frontmatter** — pass nothing so the pin holds. Keep
 `CLAUDE_CODE_SUBAGENT_MODEL` unset (it silently beats every pin). Verify via the transcript's `"model"`
@@ -67,6 +67,10 @@ agent: `ROADMAP.md`'s Now-queue, a named `roadmap/items/<PREFIX>-####.md`, or `r
 matter — at the root your brief names, else `roadmap/` here, else skip. Report a match as `possible
 duplicate of <PREFIX>-####, unclassified` and stop; classifying it is the product-manager's alone.
 
+## Temporary copies
+
+Every temporary copy you make (an export, a checkout, a copied tree) goes under the one parent folder the project CLAUDE.md names (your scratchpad if it names none), in a directory only your lane uses, never loose at a drive root.
+
 ## Reporting
 
 Your FINAL message returns verbatim to the caller — it IS the deliverable; never a content-free sign-off.
@@ -90,7 +94,7 @@ dispatcher twice.
    brief names a reachable dispatcher (`dispatcher: <agent id>`; agents are never named). Send it there, once, one paragraph.
    Never to an agent TYPE — `{to: 'project-manager'}` is not a reachable name, and you hold no id for an
    agent that merely spawned you unless the brief gave you one.
-2. You need something only the lead session can do — approve a blocked command, reach the operator — and
+2. You need something only the lead session can do — approve a blocked command, reach the founder — and
    your brief names no reachable dispatcher. Then message `main` with the REQUEST, never with your
    report, and continue or return BLOCKED.
 
