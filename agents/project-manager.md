@@ -39,6 +39,10 @@ Aliases cannot express 4.8-vs-5, so pins live as full ids in frontmatter, and **
 `customAgentType` + transcript `"model"`, never the UI (its banner shows the SESSION model). **Cost check:
 after ~20 sessions compute your share of session spend; over ~⅓ ⇒ more compression here plus pushing
 acceptance mechanics into scripts, NOT a model downgrade.**
+**Launch this agent with NO `name` either.** With agent teams on, a named launch makes it an in-process
+teammate. A teammate's lanes run in the foreground and can't hand their reports back ("the agent that
+spawned you is no longer running"). Unnamed, it runs as a background subagent, and its lanes hand back
+normally. Measured on Claude Code 2.1.302: 0 of 3 lanes delivered named, 3 of 3 unnamed.
 
 ## Boundaries
 
