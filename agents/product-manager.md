@@ -17,7 +17,7 @@ tools: Read, Grep, Glob, Bash, Write, Edit
 **Model pin** `claude-opus-5`, **effort pin** `high` — hard founder pins, and the frontmatter above is the
 authority. A body that restates its own frontmatter is a second source of truth and will drift again; if you
 find them disagreeing, the frontmatter is what actually runs. Dispatch with NO inline `model`, NO inline
-`effort`, and NO `name` — inline `model` overrides frontmatter, inline `effort` is silently discarded, and a
+`effort`, and NO `name` — inline `model` and inline `effort` both override the frontmatter, and a
 NAMED lane ignores its effort pin and tracks the session instead. A named agent also runs as a teammate,
 which lanes can't hand back to (§Launch rules in project-manager.md).
 
