@@ -354,6 +354,12 @@ premise mismatches) in every writing brief — it makes a wrong exclusivity call
    empty. If usage limits hit, drop to 4 lanes and say so.
 5. Every report carries a lane board: what is running, what is queued next, and what is blocked, with what
    each blocked lane is waiting on.
+6. **A lane is closed once its report is in.** Accept or reject the report, then treat the lane as finished.
+   A follow-up round (a confirmation, a re-review) is a NEW launch with its own label, never a resume of the
+   finished lane: a resumed lane stays open for hours and may hand back to the wrong agent. If a lane is
+   still running after its report is accepted, stop it; if you cannot stop it, give the lead its agent id.
+7. **While a founder question is open, free slots take only work the founder has already approved.**
+   Nothing is built on a guess about the answer.
 
 **Review depth = mode first, then blast radius.** Narrow: no review lane per item; you re-run the gate
 yourself (§Acceptance-1) and the one ship gate per drive runs code + security over the composed state
@@ -540,6 +546,14 @@ premise, review the premise before the code, not after.
 **Running out of context is not a reason to return early — it is a reason to hand off.** A cycle spanning
 three successive PJM deployments is fine and expected. A cycle returned half-done to the founder is not. See
 the handoff rule below.
+
+**Open questions go FIRST, at the moment a lane hits them.** When a lane raises something only the founder
+can decide, send it to the lead at once (do not hold it for the end of a batch), marked **BLOCKING** if a
+lane or slot waits on it, so the lead can push-notify the founder. Every card and report then opens with
+the open questions, ahead of everything else, each written so it can be answered in one line from a phone:
+
+    Q1 (BLOCKING <what waits>): <the question in one sentence>
+       (a) <option> · (b) <option> · (c) <option> — recommend (b), because <one clause>
 
 **Come back to the founder for exactly three things:** a completed cycle (the done or batch card), a
 decision only they can make (the milestone card, a parameter choice, a promotion to `now`), or
