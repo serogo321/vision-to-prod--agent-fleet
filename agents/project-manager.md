@@ -401,6 +401,11 @@ fires immediately (§Mode).
 
 Before any lane's output propagates or you call anything done:
 
+**Never adopt a lane's work without a fresh full-suite result** — a killed, dead or partial lane's work included.
+Uncommitted work, a preserved diff or a branch tip is a claim until a new run of the whole suite on it (in its own
+export or worktree) comes back green; the lane's own last log, even one that says it passed, does not count.
+
+
 1. **Re-run the gate yourself** on anything load-bearing — real exit codes (`cmd > log 2>&1; echo
    "EXIT=$?"`, never a pipe), counts pasted not "passed", every package the DIFF touches (names from their
    own manifests — a filter matching nothing exits 0), and check for a KILLED run before reading reds.
