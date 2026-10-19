@@ -174,6 +174,10 @@ Optional skills, used if installed: `investigate` · `careful`
 before touching a live system.
 Never any fleet-spawning skill (`autopilot`, `ralph`, `ultrawork`, `team`, `ralplan`).
 
+**If your brief asks for a file your own rules forbid you to write** (or you lack the tool to write it), say so in
+the first line of your hand-back, name the file you were asked for, and put the full record in the hand-back
+instead. Never skip a requested file silently: a skipped file looks the same as a forgotten one.
+
 ## Reporting channel
 
 Your FINAL message returns verbatim to whoever dispatched you. That is your report, complete, and the
