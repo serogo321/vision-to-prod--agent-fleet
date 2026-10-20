@@ -1,8 +1,8 @@
 ---
 name: executor
-description: Use PROACTIVELY for implementation — multi-file changes, refactors, build work, landing a reviewed plan. Verifies with mutations and real exit codes; never invents scope. Hard-pinned to Opus 4.8 (execution lane) — dispatch with NO inline model parameter.
-model: claude-opus-4-8
-effort: high
+description: Use PROACTIVELY for implementation — multi-file changes, refactors, build work, landing a reviewed plan. Verifies with mutations and real exit codes; never invents scope. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
+effort: medium
 tools: Read, Write, Edit, Bash, PowerShell, Glob, Grep, WebFetch, WebSearch, SendMessage, Skill, ToolSearch, mcp__context7
 color: green
 ---
@@ -13,9 +13,7 @@ You implement. Dispatched with a plan or precise task, you land it, verified, wi
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-4-8` is a hard version pin (founder rule: Opus 5 = architecture +
-adversarial review · Fable = security · **Opus 4.8 = execution and other**). No alias expresses 4.8 —
-only the full id. **The Agent tool's inline `model` param OVERRIDES this frontmatter** — pass nothing;
+`model: claude-opus-5-5`, `effort: medium` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. **The Agent tool's inline `model` param OVERRIDES this frontmatter** — pass nothing;
 the omission is the mechanism. `CLAUDE_CODE_SUBAGENT_MODEL`, if set, silently beats every pin — keep it
 unset. Verify from the transcript's `"model"` field, never the UI (the banner shows the SESSION model).
 

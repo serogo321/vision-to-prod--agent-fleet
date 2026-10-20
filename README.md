@@ -14,19 +14,22 @@ milestone, and gives simple and complex examples.
 
 ## The agents
 
+The model and effort pins come from a blind bakeoff on real replayed work: see
+[docs/2026-10-pin-bakeoff.md](docs/2026-10-pin-bakeoff.md) for the method, results and reasons.
+
 | Agent | Model · effort | What it does |
 |---|---|---|
-| `project-manager` | Opus 5 · xhigh | The orchestrator. It orients from the project's own state files, routes each task to the right specialist, verifies what comes back, and owns the end-of-session state update. |
+| `project-manager` | Opus 5.5 · xhigh | The orchestrator. It orients from the project's own state files, routes each task to the right specialist, verifies what comes back, and owns the end-of-session state update. |
 | `architect` | Fable · xhigh | Designs: systems, fixes, migration and refactor plans, API and contract shapes. It writes a design artifact and never edits source. |
 | `critic` | Opus 5 · xhigh | Adversarial review of plans, designs and claims before anyone acts on them. It refutes with evidence or approves with a verified-clean list. |
-| `executor` | Opus 4.8 · high | Implementation. It lands a reviewed plan, verifies with mutations and real exit codes, and never invents scope. |
-| `test-engineer` | Opus 5 · xhigh | Test strategy, integration and end-to-end coverage, flaky-test hardening, and proof that a test is not vacuous. |
-| `debugger` | Opus 5 · xhigh | Root-cause analysis. It reads the logs first, proves the mechanism, then fixes minimally. |
-| `code-reviewer` | Opus 5 · xhigh | The last gate before merge: logic defects, cross-layer drift, fail-open branches, test pinning. Findings carry severity and confidence; it never edits. |
+| `executor` | Opus 5.5 · medium | Implementation. It lands a reviewed plan, verifies with mutations and real exit codes, and never invents scope. |
+| `test-engineer` | Opus 5.5 · xhigh | Test strategy, integration and end-to-end coverage, flaky-test hardening, and proof that a test is not vacuous. |
+| `debugger` | Opus 5.5 · xhigh | Root-cause analysis. It reads the logs first, proves the mechanism, then fixes minimally. |
+| `code-reviewer` | Opus 5.5 · high | The last gate before merge: logic defects, cross-layer drift, fail-open branches, test pinning. Findings carry severity and confidence; it never edits. |
 | `security-reviewer` | Fable · max | Security review: auth and sessions, secrets, input parsing, data access, spend paths, new endpoints, dependencies and supply chain. |
-| `designer` | Opus 5 · xhigh | User-facing surfaces: flows, state inventories, tokens, and visual and interaction specs, backed by a measured prototype. |
-| `researcher` | Opus 4.8 · high | Codebase exploration, library and SDK grounding, external docs. It returns findings and authors nothing. |
-| `product-manager` | Opus 5 · high | Steward of the roadmap. It drains the intake inbox, classifies duplicates, closes items with evidence, and regenerates the roadmap view. |
+| `designer` | Opus 5.5 · xhigh | User-facing surfaces: flows, state inventories, tokens, and visual and interaction specs, backed by a measured prototype. |
+| `researcher` | Opus 5.5 · medium | Codebase exploration, library and SDK grounding, external docs. It returns findings and authors nothing. |
+| `product-manager` | Opus 5.5 · medium | Steward of the roadmap. It drains the intake inbox, classifies duplicates, closes items with evidence, and regenerates the roadmap view. |
 
 ## How they work together
 

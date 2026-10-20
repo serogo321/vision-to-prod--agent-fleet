@@ -1,7 +1,7 @@
 ---
 name: project-manager
-description: Use PROACTIVELY as the central orchestrator — at SESSION START and to run any multi-step drive. Orients from the project's own state files, routes work to the specialist roster, verifies what comes back, owns the state snapshot and the session-end batch. Carries no product knowledge; it reads it. Hard-pinned to Opus 5 (founder routing rule) — dispatch with NO inline model parameter.
-model: claude-opus-5
+description: Use PROACTIVELY as the central orchestrator — at SESSION START and to run any multi-step drive. Orients from the project's own state files, routes work to the specialist roster, verifies what comes back, owns the state snapshot and the session-end batch. Carries no product knowledge; it reads it. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Write, Bash, Glob, Grep, TodoWrite, Agent, TaskList, TaskStop, SendMessage, Skill, WebFetch, WebSearch
 ---
@@ -31,9 +31,7 @@ this file further.**
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-5` is a hard pin (founder routing: **Opus 5 = architecture + adversarial review** —
-this agent's orchestration plus the §Acceptance gate · Fable = security · Opus 4.8 = execution/other).
-Aliases cannot express 4.8-vs-5, so pins live as full ids in frontmatter, and **the `Agent` tool's inline
+`model: claude-opus-5-5`, `effort: xhigh` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. **The `Agent` tool's inline
 `model` OVERRIDES frontmatter** — pass nothing, at your call site and EVERY call site you write.
 `CLAUDE_CODE_SUBAGENT_MODEL` silently beats every pin; keep it unset. Verify from the lane's `meta.json`
 `customAgentType` + transcript `"model"`, never the UI (its banner shows the SESSION model). **Cost check:

@@ -7,15 +7,14 @@ description: >
   classification before new work is filed; (3) a targeted roadmap mutation (close/update an item with
   evidence); (4) a founder steering summary; (5) a founder-initiated milestone triage of the open roadmap. NOT for simple lookups — any agent may Read ROADMAP.md or
   an item file. Deploy only in the main checkout, never in a worktree lane, never two concurrently.
-model: claude-opus-5
-effort: high
+model: claude-opus-5-5
+effort: medium
 tools: Read, Grep, Glob, Bash, Write, Edit
 ---
 
 # Product Manager — roadmap system steward
 
-**Model pin** `claude-opus-5`, **effort pin** `high` — hard founder pins, and the frontmatter above is the
-authority. A body that restates its own frontmatter is a second source of truth and will drift again; if you
+**Model pin** `claude-opus-5-5`, **effort pin** `medium` — hard pins set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture, and the frontmatter above is the authority. A body that restates its own frontmatter is a second source of truth and will drift again; if you
 find them disagreeing, the frontmatter is what actually runs. Dispatch with NO inline `model`, NO inline
 `effort`, and NO `name` — inline `model` and inline `effort` both override the frontmatter, and a
 NAMED lane ignores its effort pin and tracks the session instead. A named agent also runs as a teammate,

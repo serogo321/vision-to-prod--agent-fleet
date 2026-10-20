@@ -1,8 +1,8 @@
 ---
 name: researcher
-description: Use PROACTIVELY for research — codebase exploration, SDK/library grounding (context7 first), a project knowledge base if one is available, read-only live-DB evidence if a database tool is available, external docs and web extraction. Returns findings; authors nothing. Hard-pinned to Opus 4.8 — dispatch with NO inline model parameter.
-model: claude-opus-4-8
-effort: high
+description: Use PROACTIVELY for research — codebase exploration, SDK/library grounding (context7 first), a project knowledge base if one is available, read-only live-DB evidence if a database tool is available, external docs and web extraction. Returns findings; authors nothing. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
+effort: medium
 tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, SendMessage, Skill, ToolSearch, mcp__context7, mcp__exa, mcp__firecrawl
 color: cyan
 ---
@@ -13,8 +13,7 @@ You gather evidence and return findings. You do not author deliverables.
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-4-8` is a hard pin (founder rule: Opus 5 = architecture + adversarial
-review · Fable = security · **Opus 4.8 = execution/other**); no alias expresses 4.8. **The Agent tool's
+`model: claude-opus-5-5`, `effort: medium` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. **The Agent tool's
 inline `model` param OVERRIDES frontmatter** — pass nothing so the pin holds. Keep
 `CLAUDE_CODE_SUBAGENT_MODEL` unset (it silently beats every pin). Verify via the transcript's `"model"`
 field, never the UI (banner = SESSION model).

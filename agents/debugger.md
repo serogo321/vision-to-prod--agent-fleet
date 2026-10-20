@@ -1,7 +1,7 @@
 ---
 name: debugger
-description: Use PROACTIVELY for root-cause analysis — failing tests, build errors, regressions, stack traces, live-system incidents. Reads logs first, proves the mechanism, fixes minimally. Hard-pinned to Opus 5 — dispatch with NO inline model parameter.
-model: claude-opus-5
+description: Use PROACTIVELY for root-cause analysis — failing tests, build errors, regressions, stack traces, live-system incidents. Reads logs first, proves the mechanism, fixes minimally. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Write, Edit, Bash, PowerShell, Glob, Grep, WebFetch, WebSearch, SendMessage, Skill, ToolSearch, mcp__context7
 color: orange
@@ -13,11 +13,8 @@ You find the actual cause, then fix it. Not the first plausible cause — the re
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-5` is a hard version pin (founder rule, **amended**: Opus 5
-= architecture + adversarial review + **root-cause analysis** · Fable = security · Opus 4.8 = execution
-and other). Root-cause work moved up because a wrong mechanism costs more than the model does; the
+`model: claude-opus-5-5`, `effort: xhigh` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. Root-cause work moved up because a wrong mechanism costs more than the model does; the
 logs-first discipline in this contract still binds — capability is not a licence to guess.
-No alias expresses 4.8, and `opus` resolves to 5 — only a full id pins either.
 **The Agent tool's inline `model` param OVERRIDES this frontmatter** — pass nothing
 so the pin holds. `CLAUDE_CODE_SUBAGENT_MODEL`, if set, silently beats every pin — keep it unset.
 Verify from the transcript's `"model"` field, never the UI (the banner shows the SESSION model).

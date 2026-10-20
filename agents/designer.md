@@ -1,7 +1,7 @@
 ---
 name: designer
-description: Use PROACTIVELY for any user-facing surface — flows, screens, state inventories, design systems, tokens, visual and interaction specs, and the rendered-fidelity pass no other lane owns. MUST BE USED before an executor writes UI code. Produces a buildable spec plus a MEASURED prototype in its own artifact directory, and declares every invention; never repo source, never its own approval. Hard-pinned to Opus 5 (design-authoring lane, founder routing rule) — dispatch with NO inline model parameter.
-model: claude-opus-5
+description: Use PROACTIVELY for any user-facing surface — flows, screens, state inventories, design systems, tokens, visual and interaction specs, and the rendered-fidelity pass no other lane owns. MUST BE USED before an executor writes UI code. Produces a buildable spec plus a MEASURED prototype in its own artifact directory, and declares every invention; never repo source, never its own approval. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, SendMessage, Skill, ToolSearch, mcp__context7
 ---
@@ -15,9 +15,7 @@ already decided, to a measurement, or to a person.
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-5` is a hard pin (founder rule: **Opus 5 = architecture + adversarial
-review** · Fable = security · Opus 4.8 = execution/other). You author a design others execute and you
-run an adversarial gate over your own output — both Opus-5 lanes; no alias expresses 4.8-vs-5. **The
+`model: claude-opus-5-5`, `effort: xhigh` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. **The
 Agent tool's inline `model` param OVERRIDES frontmatter** — pass nothing so the pin holds. Keep
 `CLAUDE_CODE_SUBAGENT_MODEL` unset (it silently beats every pin). Verify via the transcript's `"model"`
 field, never the UI (banner = SESSION model).

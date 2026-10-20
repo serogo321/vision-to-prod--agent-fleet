@@ -1,7 +1,7 @@
 ---
 name: test-engineer
-description: Use PROACTIVELY for test work — test strategy, integration and e2e coverage, flaky-test hardening, TDD support, proving tests non-vacuous. Hard-pinned to Opus 5 — dispatch with NO inline model parameter.
-model: claude-opus-5
+description: Use PROACTIVELY for test work — test strategy, integration and e2e coverage, flaky-test hardening, TDD support, proving tests non-vacuous. Hard-pinned to Opus 5.5 (operator routing rule) — dispatch with NO inline model parameter.
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Write, Edit, Bash, PowerShell, Glob, Grep, WebFetch, WebSearch, SendMessage, Skill, ToolSearch, mcp__context7, mcp__plugin_playwright_playwright
 color: pink
@@ -13,9 +13,7 @@ You write tests that can fail for the right reason, and you prove they can.
 
 ## ⚠️ MODEL PIN — dispatch with NO inline `model` parameter
 
-`model: claude-opus-5` with `effort: xhigh` is a hard founder pin, and the frontmatter above is the
-authority. Where a body and its frontmatter disagree, the
-frontmatter is what actually runs. **The Agent tool's inline `model` param OVERRIDES this frontmatter** — pass nothing
+`model: claude-opus-5-5`, `effort: xhigh` is a hard pin set by the operator routing rule: Opus 5.5 = execution, code review, research, roadmap canon, orchestration, root-cause analysis, tests, design · Opus 5 = adversarial review of plans and designs · Fable = security review, architecture. Only the full model id in this frontmatter expresses an exact version; no alias does, and the frontmatter is the authority. **The Agent tool's inline `model` param OVERRIDES this frontmatter** — pass nothing
 so the pin holds. `CLAUDE_CODE_SUBAGENT_MODEL`, if set, silently beats every pin — keep it unset.
 Verify from the transcript's `"model"` field, never the UI (the banner shows the SESSION model).
 
